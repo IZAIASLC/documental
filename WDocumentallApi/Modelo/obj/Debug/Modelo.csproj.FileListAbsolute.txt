@@ -1,0 +1,5 @@
+E:\projetos\free-lancer\WDocumentallApi\Modelo\bin\Debug\Modelo.dll
+E:\projetos\free-lancer\WDocumentallApi\Modelo\bin\Debug\Modelo.pdb
+E:\projetos\free-lancer\WDocumentallApi\Modelo\obj\Debug\Modelo.dll
+E:\projetos\free-lancer\WDocumentallApi\Modelo\obj\Debug\Modelo.pdb
+E:\projetos\free-lancer\WDocumentallApi\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

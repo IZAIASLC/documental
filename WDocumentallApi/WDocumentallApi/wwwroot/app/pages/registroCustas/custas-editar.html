@@ -1,0 +1,63 @@
+﻿ 
+
+<div class="ibox-content">
+
+ 
+    
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Registro de Custas</h3>
+        </div>
+      
+    </div>
+
+
+    <form name="custas" novalidate>
+
+
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input type="text" ng-model="ctrl.registroCustas.Descricao" length="10" />
+                <label>Descrição</label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input type="text" ng-model="ctrl.registroCustas.Valor"  />
+                <label>Valor</label>
+            </div>
+
+        </div>
+        
+          <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input disabled  type="text" ng-model="ctrl.registroCustas.SolicitacaoDeRegistroDto.Nome" length="10" />
+                <label>Nome</label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input disabled  type="text" ng-model="ctrl.registroCustas.SolicitacaoDeRegistroDto.IDCertisign"  />
+                <label>ID Certisign </label>
+            </div>
+
+        </div>
+        
+       
+
+        <br />
+
+ 
+
+        <div class="row">
+            <div class="col s12 m12 l12 right-align">
+                <button type="button" class="btn btn-primary" ng-click="ctrl.editar()" title="Salvar">Salvar</button>
+
+                <a class="btn btn-warning" href="#/registrocustas/listar">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+</div>

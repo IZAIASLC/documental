@@ -1,0 +1,39 @@
+﻿<div class="z-depth-1 white content-small" id="form-login">
+
+    <div ng-show="progress" class="progress blue lighten-3">
+        <div class="indeterminate blue"></div>
+    </div>
+    <div class="container-small">
+
+        <div class="row">
+            <form name="login" class="col s12">
+                <div class="row">
+                    <div class="input-field col s8  offset-s2">
+                        <input name="nome" type="text" class="validate" ng-model="ctrl.usuario.Nome"  >
+                        <label for="nome" class="">Nome</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8  offset-s2">
+                        <input name="nome" type="text" class="validate" ng-model="ctrl.usuario.Email" required>
+                        <label for="nome" class="">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8  offset-s2">
+                        <input id="Senha" name="password" type="password" class="validate" ng-model="ctrl.usuario.Senha" required>
+                        <label for="Senha">Senha</label>
+                    </div>
+                </div>
+
+                <div class="row center">
+                    <div class="col s12">
+                        <input type="button" ng-click="ctrl.salvar()" value="Cadastrar" class="btn">
+                          <a ng-href="#/login" class="btn">Login</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

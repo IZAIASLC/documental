@@ -1,0 +1,227 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="wwwroot/scripts/jquery/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+
+        //Holds the load event results
+        var base64 = "";
+        var filename = "";
+        //
+        function converToBase64() {
+            var file = document.querySelector('input[type=file]').files[0];
+
+            var reader = new FileReader();
+
+            //Event handler
+            reader.addEventListener("load", function () {
+                base64 = reader.result;
+                // console.log(base64);
+                localStorage.setItem("documento", base64)
+
+            }, false);
+
+            //Fires the load event
+            if (file) {
+                filename = file.name;
+                reader.readAsDataURL(file);
+                console.log(file.type);
+                console.log(file.size);
+
+
+            }
+        }
+
+        //AJAX request
+        $(function () {
+            $('#SalvarSolicitacao').click(function () {
+
+                var extensao = filename.split('.');
+
+                var data = {
+
+                    Nome: $('#Nome').val(),
+                    Documentos: [{ DocumentoBase64: base64, NomeDocumento: filename, ExtensaoDocumento: extensao[1] }],
+                    SolicitacaoDeRegistrosCustas: [{ Descricao: "Descricao", Valor: 100 }],
+                    SolicitacaoDeRegistrosExigencias: [{ Descricao: "Nova Exigência" }],
+                    IdStatusSolicitacao: 1
+                }
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Api/SolicitacaoDeRegistro/Cadastrar",
+                    data: JSON.stringify(data),
+                    headers: { 'Authorization':  'Bearer ' + localStorage.getItem("access_token") },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(function (result) {
+                    console.log(result);
+                });
+            })
+        });
+
+        $(function () {
+            $('#AnexarArquivo').click(function () {
+
+                var extensao = filename.split('.');
+
+                var data = {
+
+                    IdSolicitacaoDeRegistro: $('#IdSolicitacaoDeRegistro').val(),
+                    DocumentoBase64: localStorage.getItem("documento"),
+                    NomeDocumento: filename,
+                    ExtensaoDocumento: extensao[1]
+                }
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Api/Documento/Anexar",
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(function (result) {
+                    console.log(result);
+                });
+            })
+        });
+
+
+        $(function () {
+            $('#SalvarUsuario').click(function () {
+ 
+                var data = {
+
+                    Nome: $('#NomeCadastro').val(),
+                    Email: $('#Email').val(),
+                    Senha: $('#Senha').val(),
+                    Ativo: true,
+                    UsuarioPerfils :[{IdPerfil:1,IdUsuario:1}]
+                }
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Api/Usuario/Cadastrar",
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(function (result) {
+                    console.log(result);
+                });
+            })
+        });
+
+
+
+        $(function () {
+            $('#Download').click(function () {
+
+                // /Api/SolicitacaoDeRegistro/Download?guid= 2E908E24-4218-4D1C-A0C3-F1BBA1FB143D
+
+                var guid = '277652e8-ce14-4040-a0dc-0a93b6f81dc7';
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Api/Documento/Download?guid=" + guid,
+                    responseType: 'arraybuffer',
+                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem("access_token") },
+
+                }).success(function (data, headers) {
+                   
+                    var filename = headers['x-filename'];
+                    var contentType = headers['Content-Type'];
+
+                    var linkElement = document.createElement('a');
+                    try {
+                        var blob = new Blob([data], { type: contentType });
+                        var url = window.URL.createObjectURL(blob);
+
+                        linkElement.setAttribute('href', url);
+                        linkElement.setAttribute("download", filename);
+
+                        var clickEvent = new MouseEvent("click", {
+                            "view": window,
+                            "bubbles": true,
+                            "cancelable": false
+                        });
+                        linkElement.dispatchEvent(clickEvent);
+                    } catch (ex) {
+                        console.log(ex);
+                    }
+                });
+            })
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend> Salvar uma solicitação</legend>
+        <div>
+            <input type="file" onchange="converToBase64()"><br>
+
+            <br />
+            Nome: <input type="text" id="Nome" />
+
+
+            <input id="SalvarSolicitacao" type="button" value="Salvar" />
+        </div>
+
+    </fieldset>
+    <fieldset>
+        <legend> Download de Documento anexo à solicitação</legend>
+        <div>
+            <a href="Api/Documento/Download?guid=FA16BFF9-74A5-4930-A0C3-C8988EB9219E" target="_blank">Download</a>
+
+            <a href="Api/Documento/Visualizar?guid=FA16BFF9-74A5-4930-A0C3-C8988EB9219E" onclick="window.open(this.href, 'child', 'scrollbars,width=650,height=600'); return false">Visualizar</a>
+
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend> Anexar um documento à uma solicitação</legend>
+        <div>
+            <input type="file" onchange="converToBase64()"><br>
+
+            <br />
+            Guid da solicitação: <input type="text" id="IdSolicitacaoDeRegistro" />
+
+
+            <input id="AnexarArquivo" type="button" value="Anexar" />
+        </div>
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend> Cadastrar um usuário</legend>
+        <div>
+
+
+            <br />
+            Nome: <input type="text" id="NomeCadastro" />
+
+            <br />
+            Email: <input type="text" id="Email" />
+
+            <br />
+            Senha: <input type="text" id="Senha" />
+
+            <input id="SalvarUsuario" type="button" value="Novo Usuário" />
+        </div>
+
+    </fieldset>
+
+
+
+
+</body>
+</html>

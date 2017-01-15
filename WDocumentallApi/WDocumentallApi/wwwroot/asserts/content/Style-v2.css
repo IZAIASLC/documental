@@ -1,0 +1,358 @@
+﻿
+ /*main  {
+    padding-left: 220px;
+}
+
+ 
+
+@media only screen and (max-width: 992px) {
+ main {
+    padding-left: 0;
+}
+
+}
+
+.side-nav  {
+width:220px;
+}
+
+.side-nav.fixed a {
+    color: #337ab7;
+    display: block;
+    padding: 0 30px;
+}
+
+/*td, th {
+    padding:10px 5px;
+}
+
+
+.btn, .btn-large, .btn-flat {
+    border: medium none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    outline: 0 none;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+}*/
+ 
+.navbar-fixed {
+    z-index: 1000;
+}
+nav .brand-logo {
+    color: #337ab7!important;
+    font-size: 1.2rem;
+    margin-left: 23px;
+}
+
+.menu-top {
+    margin-top: 65px;
+    height:90%;
+}
+
+ 
+ .side-nav a:hover {
+    background-color: rgba(0, 0, 105, 0.07);
+}
+
+ .btn {
+    background-color: #337ab7;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-out 0s;
+}
+ .btn:hover{
+    background-color: #337ab7;
+ }
+
+ /*@media screen and (max-width: 993px) {
+
+      .footer-copyright .container h6 {
+        margin-left: 0;
+    }
+
+
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+        width: calc(100% + 220px);
+    }
+
+    .row-offcanvas-left {
+        left: -220px;
+    }
+
+        .row-offcanvas-left.active {
+            left: 0;
+        }
+
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+    }
+}*/ 
+
+
+
+ 
+ body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f3f3f4;/*cor de fundo*/
+  font-size: 13px;
+  color: #676a6c;
+  overflow-x: hidden;
+}
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
+}
+
+.webcam-live {
+    width: 260px  !important ;
+    height: 160px !important;
+}
+
+ img{
+width:170px;
+ height:140px;
+}
+
+#header-logo {
+font-weight:bolder;
+font-size:18px;
+color:cadetblue;
+}
+
+.mini-perfil {
+ width:37px;
+ margin-top:12px;
+ margin-right:20px;  
+}
+
+#snapshot {
+      width: 220px    ;
+    height: 162px     ;
+}
+/*#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left:50%;
+}*/
+
+ body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f3f3f4;/*cor de fundo*/
+  font-size: 13px;
+  color: #676a6c;
+  overflow-x: hidden;
+}
+
+.dropdown-menu {
+  border: medium none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  display: none;
+  float: left;
+  font-size: 12px;
+  left: 0;
+  list-style: none outside none;
+  padding: 0;
+  position: absolute;
+  text-shadow: none;
+  top: 100%;
+  z-index: 1000;
+}
+.dropdown-menu > li > a {
+  border-radius: 3px;
+  color: inherit;
+  line-height: 25px;
+  margin: 4px;
+  text-align: left;
+  font-weight: normal;
+}
+.dropdown-menu > li > a.font-bold {
+  font-weight: 600;
+}
+ 
+.dropdown-messages,
+.dropdown-alerts {
+  padding: 10px 10px 10px 10px;
+}
+.dropdown-messages li a,
+.dropdown-alerts li a {
+  font-size: 12px;
+}
+.dropdown-messages li em,
+.dropdown-alerts li em {
+  font-size: 10px;
+}
+ 
+.logo-element {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: none;
+  padding: 18px 0;
+}
+
+.acao90 {
+width:90px;
+}
+ 
+.breadcrumb {
+  background-color: #fff;/*TODO: barra sitemap de navegação*/
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.usuarioLogado {
+color:#26a69a;
+}
+.breadcrumb > li a {
+  color: inherit;
+}
+.breadcrumb > .active {
+  color: inherit;
+}
+
+
+.breadcrumb ul {
+  margin: 0;
+}
+
+.breadcrumb ul li {
+  transition: background-color .3s;
+  float: left;
+  padding: 0;
+}
+
+.breadcrumb ul li.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb ul a {
+  transition: background-color .3s;
+  font-size: 1rem;
+  color: #26a69a;
+  display: inline-block;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.ibox-content {
+  margin:65px 15px;
+}
+
+/*.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+.ibox.collapsed .ibox-content {
+  display: none;
+}
+.ibox.collapsed .fa.fa-chevron-up:before {
+  content: "\f078";
+}
+.ibox.collapsed .fa.fa-chevron-down:before {
+  content: "\f077";
+}
+.ibox:after,
+.ibox:before {
+  display: table;
+}
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #26a69a;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 3px 0 0;
+  color: #26a69a;
+  margin-bottom: 1px;
+  padding: 14px 15px 7px;
+  min-height: 48px;
+}
+
+.ibox-footer {
+  color: inherit;
+  border-top: 1px solid #e7eaec;
+  font-size: 90%;
+  background: #ffffff;
+  padding: 10px 15px;
+}
+
+/***** Loader *****/
+
+/*.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	overflow: hidden !important;
+	z-index: 99999;
+}
+
+.loader-img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -30px 0 0 -30px;
+	width: 60px;
+	height: 60px;
+	background: url(../assets/img/loading.gif) center center no-repeat;
+}*/ 
+
+
+/* TABLES */
+.table-bordered {
+  border: 1px solid #EBEBEB;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  background-color: #F5F5F6;
+  border-bottom-width: 1px;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #e7e7e7;
+}
+.table > thead > tr > th {
+  border-bottom: 1px solid #DDDDDD;
+  vertical-align: bottom;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top: 1px solid #e7eaec;
+  line-height: 1.42857;
+  padding: 8px;
+  vertical-align: top;
+}*/

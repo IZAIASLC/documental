@@ -1,0 +1,148 @@
+﻿<div class="ibox-content">
+
+
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Registro de Custas</h3>
+        </div>
+
+    </div>
+    <form name="custas" novalidate>
+
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input type="text" ng-model="ctrl.registroCustas.Descricao" length="10" />
+                <label>Descrição</label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input type="text" ng-model="ctrl.registroCustas.Valor" length="10" />
+                <label>Valor</label>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input disabled type="text" ng-model="ctrl.solicitacao.Nome" length="10" />
+                <label>Nome Solicitação </label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input disabled type="text" ng-model="ctrl.solicitacao.IDCertisign" />
+                <label>ID Certisign </label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col s12 m12 l12 right-align">
+                <a class="btn-flat" modal data-target="modalsolicitacao"><i tooltipped data-position="top" data-tooltip="Solicitação" class="material-icons md-24px">restore_page</i></a>
+            </div>
+        </div>
+
+        <div class="modal" id="modalsolicitacao">
+
+            <div class="modal-content">
+
+                <h5>Pesquisar solicitação</h5>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label class="control-label">Data da Solicitação</label>
+                       
+                         <input type="text" input-date   format="dd/mm/yyyy"   class="datepicker" 
+    id="data_nascimento" ng-model="ctrl.solicitacao.isodata" /> 
+
+
+                    </div>
+                    <div class="input-field col s6">
+
+                        <select ng-model="ctrl.solicitacao.status" material-select>
+                            <option ng-repeat="status in ctrl.listaStatus " value="{{status.IdStatusSolicitacao}}">{{status.Descricao}}</option>
+                        </select>
+                        <label>Data da Solicitação</label>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12 right-align">
+                        <input type="button" id="Adicionar" ng-click="ctrl.pesquisarForm()" name="solicitacao" value="pesquisar"
+                            class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-show="ctrl.listaSolicitacao.length">
+                <div class="col s12">
+
+                    <table class="striped bordered responsive-table ">
+                        <thead>
+                            <th>Nome
+                            </th>
+                            <th>CPF
+                            </th>
+                            <th>Data Solicitação
+                            </th>
+                            <th>ID Certisign
+                            </th>
+                            <th>Valor Declarado
+                            </th>
+
+                            <th class="center-align">Ação</th>
+                        </thead>
+                        <tbody>
+
+                         <tr dir-paginate="solicitacao in ctrl.listaSolicitacao | itemsPerPage:  ctrl.registrosPorPagina" total-items="ctrl.totalRegistros" current-page="ctrl.paginaCorrente">
+
+                                <td>
+                                    <span ng-bind="solicitacao.Nome"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="solicitacao.CPF"></span>
+                                </td>
+
+                                <td class="left-align">{{solicitacao.DataSolicitacao | date:"dd/MM/yyyy"}}
+                                </td>
+
+                                <td>
+                                    <span ng-bind="solicitacao.IDCertisign"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="solicitacao.ValorDeclarado"></span>
+                                </td>
+                                <td class="center">
+
+                                    <a ng-click="ctrl.selecionar(solicitacao)"  class="btn-flat" data-tooltip="Selecionar"><i class="material-icons md-18 tiny ">attachment</i></a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                  <dir-pagination-controls boundary-links="true" class="center-align" on-page-change="ctrl.pesquisar(newPageNumber)"></dir-pagination-controls>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <br />
+
+        <div class="row">
+            <div class="col s12 m12 l12 right-align">
+                <button type="button" class="btn btn-primary" ng-click="ctrl.salvar()" title="Salvar">Salvar</button>
+
+                <a class="btn btn-warning" href="#/registrocustas/listar">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+</div>

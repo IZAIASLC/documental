@@ -1,0 +1,52 @@
+﻿<div class="navbar-fixed">
+    <nav id="header" class="ng-scope">
+        <div class="nav-wrapper">
+            <ul class="left">
+                <li>
+                    <a class="button-collapse"  href="javascript:void(0);" data-activates="sidebar" >
+                        <i class="material-icons">menu</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="brand-logo " href="/" ui-sref="home" ui-sref-opts="{inherit: false, reload: true}">
+                        <i class="material-icons " ng-bind="APP.icon">filter_hdr</i>
+                        <span class="ng-binding" ng-bind="APP.name">Cordilheira</span>
+                    </a>
+                </li>
+            </ul> 
+            <ul class="links-others-system">
+              
+             
+                <li>
+                  
+                </li>
+                <li>
+                    <a title="Intratec" href="https://intratec.itamaraty.gov.br" target="_blank">x </a>
+                </li>
+                <li>
+                    <a title="Diplopédia" href="https://diplopedia.itamaraty.gov.br" target="_blank">x </a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+</div>
+
+<script>
+
+     $(".button-collapse").sideNav();
+   // $('.button-collapse').sideNav({
+   //     menuWidth: 200, // Default is 240
+   //     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   // }
+   //);
+   // $('.collapsible').collapsible();
+
+    //$(".button-collapse").click(function (e) {
+    //    e.preventDefault();
+    //    $("#slide-out").toggleClass('toggled');
+    //    $(".button-collapse").toggleClass('toggled');
+    //});
+
+
+</script>

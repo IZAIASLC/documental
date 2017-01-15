@@ -1,0 +1,73 @@
+﻿<div class="ibox-content">
+
+
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Solicitações</h3>
+        </div>
+        <form id="pesquisa-rapida" class="input-field col s4 right-align  ng-pristine ng-valid" ng-submit="ctrl.pesquisar()">
+            <i class="material-icons prefix">search</i>
+            <input type="text" ng-model="ctrl.searchText">
+            <label>Pesquisar</label>
+        </form>
+    </div>
+
+    <p class="right-align">
+
+        <a href="#/solicitacao/cadastrar" class="btn">&nbsp;&nbsp;Incluir</a>
+
+    </p>
+
+    <br />
+    <div class="row" ng-show="ctrl.listagemSolicitacao.length">
+        <div class="col s12">
+
+            <table class="striped bordered responsive-table ">
+                <thead>
+                    <th>Nome
+                    </th>
+                    <th>CPF
+                    </th>
+                    <th>Data Solicitação
+                    </th>
+                    <th>ID Certisign
+                    </th>
+                    <th>Valor Declarado
+                    </th>
+
+                    <th class=" center-align">Ação</th>
+                </thead>
+                <tbody>
+                   
+      
+                    <tr dir-paginate="solicitacao in ctrl.listagemSolicitacao | itemsPerPage:  ctrl.registrosPorPagina" total-items="ctrl.totalRegistros" current-page="ctrl.paginaCorrente">
+                    
+                        <td>
+                            <span ng-bind="solicitacao.Nome"></span>
+                        </td>
+                        <td>
+                            <span ng-bind="solicitacao.CPF"></span>
+                        </td>
+
+                        <td class="left-align">{{solicitacao.DataSolicitacao | date:"dd/MM/yyyy"}}
+                        </td>
+
+                        <td>
+                            <span ng-bind="solicitacao.IDCertisign"></span>
+                        </td>
+                        <td>
+                            <span ng-bind="solicitacao.ValorDeclarado"></span>
+                        </td>
+                        <td class="center">
+                            <a href="#/solicitacao/editar/{{solicitacao.IdSolicitacaoDeRegistro}}" tooltipped data-position="top" data-tooltip="Editar"><i class="material-icons md-18 tiny">edit</i></a>
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <dir-pagination-controls boundary-links="true" class="center-align" on-page-change="ctrl.pesquisar(newPageNumber)"></dir-pagination-controls>
+
+        </div>
+    </div>
+</div>

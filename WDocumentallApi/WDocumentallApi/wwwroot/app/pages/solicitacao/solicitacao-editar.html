@@ -1,0 +1,123 @@
+﻿ 
+
+<div class="ibox-content">
+
+ 
+    
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Solicitações</h3>
+        </div>
+       
+    </div>
+
+
+    <form name="solicitacao" novalidate>
+
+
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input type="text" ng-model="ctrl.solicitacao.Nome" length="10" />
+                <label>Nome</label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input type="text" ng-model="ctrl.solicitacao.CPF"  />
+                <label>CPF</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m3 l3">
+                <label class="control-label">Valor Declarado</label>
+                <input type="text" ng-model="ctrl.solicitacao.ValorDeclarado"  />
+            </div>
+
+            <div class="input-field col s12 m3 l3">
+                <label class="control-label">Quantidade de Página</label>
+                <input type="text" ng-model="ctrl.solicitacao.QuantidadePagina"  />
+            </div>
+
+            <div class="input-field col s12 m6  l6">
+                <label class="control-label">ID Certisign</label>
+                <input type="text" ng-model="ctrl.solicitacao.IDCertisign" />
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m12 l12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Selecione um arquivo</span>
+                        <input type="file" id="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="row" >
+        <div class="col s12">
+
+            <table class="striped bordered responsive-table ">
+                <thead>
+                <th>
+                    Nome do documento
+                </th>
+                <th>
+                    Extensão do documento
+                </th>
+                     <th>
+                    Data de Cadastro
+                </th>
+                
+                <th class="acao90 center-align">Ação</th>
+                </thead>
+                <tbody>
+
+                  <!--  <tr dir-paginate="solicitacao in ctrl.listagemSolicitacao | filter: ctrl.searchText | orderBy:'Nome' | itemsPerPage: ctrl.registrosPorPagina " total-items="ctrl.totalRegistros" current-page="ctrl.paginaCorrente">-->
+                      <tr ng-repeat="documento in ctrl.solicitacao.Documentos" >
+                        <td>
+                            <span ng-bind="documento.NomeDocumento"></span>
+                        </td>
+                        <td>
+                            <span ng-bind="documento.ExtensaoDocumento"></span> 
+                        </td>
+
+                        <td class="left-align">
+                            {{documento.DataCadastro | date:"dd/MM/yyyy"}}
+                        </td>
+ 
+                        <td class="center-align">
+                            <a href="/Api/Documento/Download?id={{documento.IdDocumento}}" tooltipped data-position="top" data-tooltip="Download"><i class="material-icons md-18 tiny">file_download</i></a>
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+     </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col s12 m12 l12 right-align">
+                <button type="button" class="btn btn-primary" ng-click="ctrl.editar()" title="Salvar">Salvar</button>
+
+                <a class="btn btn-warning" href="#/solicitacao/listar">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+</div>

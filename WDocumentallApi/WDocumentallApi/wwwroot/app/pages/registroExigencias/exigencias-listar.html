@@ -1,0 +1,69 @@
+﻿<div class="ibox-content">
+
+
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Registro de Exigências</h3>
+        </div>
+        <form id="pesquisa-rapida" class="input-field col s4 right-align  ng-pristine ng-valid" ng-submit="ctrl.pesquisar()">
+            <i class="material-icons prefix">search</i>
+            <input type="text" ng-model="ctrl.searchText">
+            <label>Pesquisar</label>
+        </form>
+    </div>
+
+    <p class="right-align">
+
+        <a href="#/registroexigencias/cadastrar" class="btn">&nbsp;&nbsp;Incluir</a>
+
+    </p>
+
+    <br />
+    <div class="row" ng-show="ctrl.listagemRegistroExigencias.length">
+        <div class="col s12">
+
+            <table class="striped bordered responsive-table ">
+                <thead>
+                    <th>Descrição
+                    </th>
+
+                    <th>Data da Exigência
+                    </th>
+                    <th>Nome da Solicitação
+                    </th>
+                    <th>ID Certisign
+                    </th>
+
+                    <th class=" center-align">Ação</th>
+                </thead>
+                <tbody>
+
+                    <tr dir-paginate="exigencia in ctrl.listagemRegistroExigencias | itemsPerPage:  ctrl.registrosPorPagina" total-items="ctrl.totalRegistros" current-page="ctrl.paginaCorrente">
+
+                        <td>
+                            <span ng-bind="exigencia.Descricao"></span>
+                        </td>
+
+
+                        <td class="left-align">{{exigencia.DataSolicitacaoRegistroExigencias | date:"dd/MM/yyyy"}}
+                        </td>
+
+                        <td>
+                            <span ng-bind="exigencia.SolicitacaoDeRegistroDto.Nome"></span>
+                        </td>
+                        <td>
+                            <span ng-bind="exigencia.SolicitacaoDeRegistroDto.IDCertisign"></span>
+                        </td>
+                        <td class="center">
+                            <a href="#/registroexigencias/editar/{{exigencia.IdSolicitacaoDeRegistroExigencias}}" tooltipped data-position="top" data-tooltip="Editar"><i class="material-icons md-18 tiny">edit</i></a>
+
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <dir-pagination-controls boundary-links="true" class="center-align" on-page-change="ctrl.pesquisar(newPageNumber)"></dir-pagination-controls>
+
+        </div>
+    </div>
+</div>

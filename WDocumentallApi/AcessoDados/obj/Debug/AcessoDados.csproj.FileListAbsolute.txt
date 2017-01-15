@@ -1,0 +1,11 @@
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\AcessoDados.dll
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\AcessoDados.pdb
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\EntityFramework.dll
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\Modelo.dll
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\Modelo.pdb
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\EntityFramework.xml
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\obj\Debug\AcessoDados.csprojResolveAssemblyReference.cache
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\obj\Debug\AcessoDados.dll
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\obj\Debug\AcessoDados.pdb
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\EntityFramework.SqlServer.dll
+E:\projetos\free-lancer\WDocumentallApi\AcessoDados\bin\Debug\EntityFramework.SqlServer.xml

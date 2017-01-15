@@ -1,0 +1,33 @@
+﻿<div class="z-depth-1 white content-small" id="form-login">
+
+    <div ng-show="progress" class="progress blue lighten-3">
+        <div class="indeterminate blue"></div>
+    </div>
+    <div class="container-small">
+
+        <div class="row">
+            <form name="login" class="col s12" ng-submit="ctrl.logar()">
+                <div class="row">
+                    <div class="input-field col s8  offset-s2">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="Login" name="login" type="text" class="validate" ng-model="ctrl.login.email" required>
+                        <label for="Login" class="">Login</label>
+                    </div>
+                    <div class="input-field col s8  offset-s2">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input id="Senha" name="password" type="password" class="validate" ng-model="ctrl.login.senha" required>
+                        <label for="Senha">Senha</label>
+                    </div>
+
+                </div>
+                <div class="row center">
+                    <div class="col s12">
+                        <input type="submit" id="logar" value="acessar" class="btn">
+                        <a ng-href="#/cadastro" class="btn">Cadastro</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

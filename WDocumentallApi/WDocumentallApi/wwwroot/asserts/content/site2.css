@@ -1,0 +1,401 @@
+﻿
+/*@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";*/
+
+ 
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
+}
+
+.webcam-live {
+    width: 260px  !important ;
+    height: 160px !important;
+}
+
+ img{
+width:170px;
+ height:140px;
+}
+
+
+html {
+    min-height: 100%;
+}
+body {
+    background: #f5f2f0 none repeat scroll 0 0;
+    height: 100%;
+
+  background-color: #f3f3f4;/*cor de fundo*/
+  font-size: 13px;
+  color: #676a6c;
+  overflow-x: hidden;
+}
+
+.collapsible-header {
+font-weight:bold;
+}
+
+body > div[ui-view] {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+#header {
+    background: #fcfcfc none repeat scroll 0 0;
+    border-bottom: medium none #fff;
+    border-top: medium none #fcfcfc;
+    z-index: 998;
+}
+@media only screen and (max-width: 992px) {
+nav .brand-logo {
+    left: 25%;
+}
+}
+nav .nav-wrapper .brand-logo i {
+    display: inline-block;
+    font-size: 1.231em;
+    line-height: 1.4em;
+    vertical-align: middle;
+}
+.navbar-fixed {
+    z-index: auto;
+}
+nav .brand-logo {
+    color: #1976d2;
+    font-size: 1.3rem;
+    margin-left: 23px;
+}
+@media only screen and (min-width: 993px) {
+nav .brand-logo {
+    margin-left: 20px;
+}
+}
+nav .nav-wrapper .dropdown-content {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+nav .nav-wrapper .dropdown-content i {
+    display: inline-block;
+    vertical-align: bottom;
+}
+nav .dropdown-content li > a {
+    font-size: 0.8666em;
+    font-weight: bold;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+nav, nav a.button-collapse, nav a.button-collapse i {
+    height: 55px;
+    line-height: 55px;
+}
+nav .nav-wrapper i {
+    height: 35px;
+    line-height: 35px;
+}
+nav .nav-wrapper a {
+    color: #1976d2;
+}
+ul.menu-header {
+    margin-right: 15px;
+}
+#icon-perm.material-icons {
+    margin-left: 1px;
+    margin-top: 0;
+}
+nav .menu-header.right > li:hover {
+    background-color: transparent;
+}
+nav .menu-header.right > li > a {
+    margin-block-start: 0;
+    margin-right: 5px;
+}
+nav .menu-header.right > li > a > i {
+    color: #1976d2;
+    margin-top: 2px;
+    text-align: center;
+}
+.links-others-system {
+    padding-left: 265px;
+}
+#dropdown-system {
+    border: 1px solid #666;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin-block-start: 3.1em;
+    margin-right: -90px;
+    margin-top: 45px;
+    position: relative;
+}
+#dropdown-system li a i {
+    font-size: 3rem;
+}
+#dropdown-system.dropdown-content {
+    overflow-y: visible;
+}
+#dropdown-system.dropdown-content::before {
+    background: rgba(0, 0, 0, 0) url("../../assets/img/ponta-tooltip.png") no-repeat scroll 0 0;
+    border: 10px solid transparent;
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    right: 98px;
+    top: -20px;
+    width: 31px;
+}
+#dropdown-system li {
+    padding-top: 0;
+}
+#dropdown-system li:hover {
+    background-color: #fff !important;
+    border-radius: 15px;
+}
+#tootip-system {
+    width: 290px;
+}
+#tootip-system a {
+    padding: 10px 11px;
+    text-align: center;
+}
+#tootip-system a:hover {
+    background-color: #eee;
+}
+#tootip-system a h6 {
+    font-size: 12px;
+    white-space: normal;
+}
+#tootip-system a img {
+    width: 60px;
+}
+#tootip-system.row {
+    margin-bottom: 0;
+}
+#tootip-system.row .col {
+    padding: 0 !important;
+}
+#intradocs-posto {
+    min-height: 94px;
+}
+#a-outros-sistemas {
+    border-radius: 2px;
+}
+#dropdown-conta {
+    border: 1px solid #666;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin-block-start: 3.1em;
+    margin-right: -90px;
+    margin-top: 45px;
+    position: relative;
+    right: 97px !important;
+    text-align: left;
+}
+#dropdown-conta i {
+    float: left;
+    font-size: 22px;
+    margin-left: 8px;
+    margin-top: -6px;
+}
+#dropdown-conta a {
+    font-size: 12px;
+}
+#dropdown-conta.dropdown-content {
+    overflow-y: visible;
+}
+#dropdown-conta.dropdown-content::before {
+    background: rgba(0, 0, 0, 0) url("../../assets/img/ponta-tooltip.png") no-repeat scroll 0 0;
+    border: 10px solid transparent;
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -20px;
+    width: 31px;
+}
+#dropdown-conta li:hover {
+    background-color: #fff !important;
+    border-radius: 15px;
+}
+#tootip-conta {
+    width: 152px;
+}
+#tootip-conta a {
+    padding: 8px;
+}
+#tootip-conta span {
+    margin-left: 10px;
+}
+#link-top:hover {
+    background-color: #eee;
+    border-radius: 2px 2px 0 0;
+}
+#link-bottom:hover {
+    background-color: #eee;
+    border-radius: 0 0 2px 2px;
+}
+#tootip-conta a h6 {
+    font-size: 12px;
+    white-space: normal;
+}
+#tootip-conta a img {
+    width: 60px;
+}
+#tootip-conta.row {
+    margin-bottom: 0;
+}
+#tootip-conta.row .col {
+    padding: 0 !important;
+}
+.blue-mre-icon {
+    color: #1976d2;
+}
+nav.subnav {
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 0;
+    transition: top 0.2s ease 0s;
+    z-index: 996;
+}
+nav.subnav.open {
+    top: 55px;
+}
+#sidebar {
+    border-right: 1px solid #ccc;
+    box-shadow: none;
+    padding-top: 61px;
+    position: fixed;
+    z-index: 998;
+}
+#sidebar ul {
+    margin: 0;
+}
+.side-nav a {
+    font-size: 0.8667rem;
+    height: auto;
+    line-height: 24px;
+    padding: 10px 5px;
+}
+.side-nav.fixed a {
+    font-size: 0.8667rem;
+    height: auto;
+    line-height: 24px;
+    padding: 10px 5px;
+}
+.side-nav .divider {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.side-nav li {
+    margin-top: 10px;
+}
+.side-nav li:hover, .side-nav li.active {
+    background-color: #f3f3f3;
+}
+.menu-top {
+    margin-top: 60px;
+}
+#sidebar .material-icons {
+    vertical-align: bottom;
+}
+@media only screen and (min-width: 993px) {
+#content-wrapper {
+    margin-left: 240px;
+}
+nav.subnav {
+    padding-left: 250px;
+}
+}
+#content-wrapper.no-sidebar {
+    margin-left: 0;
+    transition: none 0s ease 0s ;
+}
+#content-wrapper.no-sidebar > div {
+    padding-left: 0;
+    padding-right: 0;
+}
+#content-wrapper {
+    padding-bottom: 38px;
+    transition: margin-left 0.2s ease-out 0s;
+    will-change: margin-left;
+}
+#content-wrapper > div {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.title-content {
+    color: #1976d2;
+    font-size: 24px;
+    font-weight: bold;
+     
+}
+.subtitle {
+    color: #1976d2;
+    font-size: 24px;
+}
+.content-small {
+    margin: 10% auto;
+    width: 450px;
+}
+.container-small {
+    padding-bottom: 5px;
+    padding-top: 44px;
+}
+.message {
+    height: 25px;
+    text-align: center;
+}
+.message-warning {
+    background-color: #ff8f00;
+    color: white;
+}
+.message-danger {
+    background-color: #dd2c00;
+    color: white;
+}
+.message-success {
+    background-color: #33691e;
+    color: white;
+}
+.message i {
+    top: 50%;
+    vertical-align: bottom;
+}
+footer.footer-thin {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 995;
+}
+footer.footer-thin .footer-copyright {
+    background-color: #fff !important;
+    height: auto;
+    padding: 5px;
+}
+.footer-copyright .container h6 {
+    color: #1976d2;
+}
+@media screen and (min-width: 993px) {
+body > .drag-target {
+    display: none;
+}
+footer.footer-thin {
+    padding-left: 245px;
+}
+.body-login footer.footer-thin {
+    padding-left: 0;
+}
+}
+@media screen and (max-width: 993px) {
+.footer-copyright .container h6 {
+    margin-left: 0;
+}
+.links-others-system {
+    display: none;
+}
+}

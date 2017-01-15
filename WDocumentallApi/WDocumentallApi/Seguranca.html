@@ -1,0 +1,98 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="wwwroot/scripts/jquery/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+
+     
+
+        $(function () {
+            $('#SalvarUsuario').click(function () {
+ 
+                var data = {
+
+                    Nome: $('#NomeCadastro').val(),
+                    Email: $('#Email').val(),
+                    Senha: $('#Senha').val(),
+                    Ativo: true,
+                    UsuarioPerfils :[{IdPerfil:1}] //CADASTRA UM PERFIL
+                   // UsuarioPerfils :[{IdPerfil:1}, {IdPerfil:2}] //CADASTRA DOIS PERFIL
+                }
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Api/Usuario/Cadastrar",
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(function (result) {
+                    console.log(result);
+                });
+            })
+        });
+
+
+        $(function () {
+            $('#Logar').click(function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Api/Token",
+                    data: { grant_type: 'password', username: $('#EmailLogin').val(), password: $('#SenhaLogin').val() },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done(function (result) {
+                    localStorage.setItem("access_token", result.access_token);
+                });
+            })
+        });
+
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend> Logar </legend>
+        <div>
+
+            <br />
+            Email: <input type="text" id="EmailLogin" />
+
+            <br />
+            Senha: <input type="text" id="SenhaLogin" />
+
+            <input id="Logar" type="button" value="Logar" />
+        </div>
+
+    </fieldset>
+   
+    <fieldset>
+        <legend> Cadastrar um usuário</legend>
+        <div>
+
+
+            <br />
+            Nome: <input type="text" id="NomeCadastro" />
+
+            <br />
+            Email: <input type="text" id="Email" />
+
+            <br />
+            Senha: <input type="text" id="Senha" />
+
+            <input id="SalvarUsuario" type="button" value="Novo Usuário" />
+        </div>
+
+    </fieldset>
+
+
+
+
+</body>
+</html>

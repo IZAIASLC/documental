@@ -1,0 +1,51 @@
+﻿
+
+<div class="ibox-content">
+
+    <div class="row top-title">
+        <div class="col s8">
+            <h3 class="title-content">Registro de Exigências</h3>
+        </div>
+
+    </div>
+
+    <form name="exigencias" novalidate>
+
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <textarea class="materialize-textarea" ng-model="ctrl.registroExigencias.Descricao"></textarea>
+
+                <label>Descrição</label>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-field col s12  m8 l8">
+                <input disabled type="text" ng-model="ctrl.registroExigencias.SolicitacaoDeRegistroDto.Nome" length="10" />
+                <label>Nome</label>
+            </div>
+
+
+            <div class="input-field col s12  m4 l4">
+                <input disabled type="text" ng-model="ctrl.registroExigencias.SolicitacaoDeRegistroDto.IDCertisign" />
+                <label>ID Certisign </label>
+            </div>
+
+        </div>
+
+
+        <br />
+
+        <div class="row">
+            <div class="col s12 m12 l12 right-align">
+                <button type="button" class="btn btn-primary" ng-click="ctrl.editar()" title="Salvar">Salvar</button>
+
+                <a class="btn btn-warning" href="#/registroexigencias/listar">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,33 @@
+﻿<!--<div class="row">
+
+       <div>Select an image file: <input type="file" id="fileInput" /></div>
+      <div class="cropArea">
+        <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+      </div>
+      <div>Cropped Image:</div>
+      <div><img ng-src="{{myCroppedImage}}" /> Imagem</div>
+    </div>-->
+<div id="modalImage" class="modal">
+    <div class="modal-content">
+        <div class="row center-align">
+            <div class="col s12">
+                <webcam channel="channel"
+                    on-streaming="onSuccess()"
+                    on-error="onError(err)"
+                    on-stream="onStream(stream)"></webcam>
+            </div>
+            <div class="col s12">
+                <canvas id="snapshot"></canvas>
+            </div>
+
+        </div>
+        <div class="row">
+            <a class="modal-action  waves-effect waves-green btn" ng-click="makeSnapshot()">Capturar imagem</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 text-left">
+        <button data-target="modalImage" modal class="btn">Inserir imagem</button>
+    </div>
+</div>
